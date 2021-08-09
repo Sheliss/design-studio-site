@@ -1,0 +1,24 @@
+.navbar-light .nav__custom .nav__btn {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    color: black;
+
+    &:hover {
+        color: $main-color;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav__btn {
+        padding-right: 0;
+        padding-left: 30px;
+    }
+
+}
