@@ -3,13 +3,14 @@ import {Container, Row, Col, Image, Spinner} from 'react-bootstrap';
 
 
 export default function WorksList() {
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => { 
+        setLoading(true)
         callWorksList()
             .then(res => setData(res))
-            .then(setLoading(false));
+            .then(setLoading(false))
     }, [])
 
     const callWorksList = async () => {
@@ -20,18 +21,26 @@ export default function WorksList() {
         return body;
     }
 
+    const workCard = (card, index) => {
+        const img = card.img;
+        const alt = card.id;
+        
 
+        return (
+        <Col xs={3} key={index}>
+            <img src={img} alt={alt}></img>
+        </Col>
+        )
+    }
 
-    const retrivedWorks = loading ? (
+    const retrivedWorks = loading || data === [] ? (
         <Row className="justify-content-center">
             <Spinner animation="border"></Spinner>
         </Row>
     ) : (
         <Row className="row-cols-4">
-            {data.map((work, index) => (
-                <Col xs={3}>
-                    <Image src={data[work].img}></Image>
-                </Col>
+            {Object.keys(data).map((key, index) => (
+                workCard(data[key], index)
             ))}
         </Row>
     )
