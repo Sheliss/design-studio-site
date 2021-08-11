@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import {Container, Row, Col, Image, Spinner} from 'react-bootstrap';
 
 
+
 export default function WorksList() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
+
 
     useEffect(() => { 
         setLoading(true)
@@ -25,10 +27,11 @@ export default function WorksList() {
         const img = card.img;
         const alt = card.id;
         
-
         return (
-        <Col xs={3} key={index} className="g-0 worksGrid_container">
+            
+        <Col key={index} className="g-0 worksGrid_container">
             <Image src={img} alt={alt} className="img-fluid worksGrid__image"></Image>
+            <span class="pe-7s-look works__look"></span>
         </Col>
         )
     }
@@ -38,7 +41,7 @@ export default function WorksList() {
             <Spinner animation="border"></Spinner>
         </Row>
     ) : (
-        <Row className="row-cols-4">
+        <Row className="row-cols-lg-4 row-cols-3">
             {Object.keys(data).map((key, index) => (
                 workCard(data[key], index)
             ))}
