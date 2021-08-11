@@ -27,8 +27,8 @@ export default function WorksList() {
         
 
         return (
-        <Col xs={3} key={index}>
-            <img src={img} alt={alt}></img>
+        <Col xs={3} key={index} className="g-0 worksGrid_container">
+            <Image src={img} alt={alt} className="img-fluid worksGrid__image"></Image>
         </Col>
         )
     }

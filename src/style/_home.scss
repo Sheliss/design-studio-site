@@ -17,3 +17,23 @@
     text-align: center;
     padding-bottom: 100px;
 }
+
+.worksGrid__image {
+    object-fit: cover;
+    height: 100%;
+}
+
+.worksGrid_container {
+    background-color: $main-color;
+
+    img {
+        transition: opacity .2s;
+    }
+
+    &:hover {
+        cursor: pointer;
+        img {
+            opacity: .15;
+        }
+    }
+}
