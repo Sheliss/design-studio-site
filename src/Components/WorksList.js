@@ -38,7 +38,7 @@ export default function WorksList() {
 
     const retrivedWorks = loading || data === [] ? (
         <Row className="justify-content-center">
-            <Spinner animation="border"></Spinner>
+            <Spinner animation="border works__spinner"></Spinner>
         </Row>
     ) : (
         <Row className="row-cols-lg-4 row-cols-3">

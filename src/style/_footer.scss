@@ -1,0 +1,39 @@
+.footer {
+    background-color: #141414;
+}
+
+.footer__row {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.footer__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: white;
+    line-height: 18px;
+    padding-bottom: 27px;
+}
+
+.footer__link {
+    display: block;
+}
+
+.footer__subtitle, .footer__contact {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: $footerText-color;
+}
+
+.footer__link {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    color: $footerText-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $main-color;
+    }
+}

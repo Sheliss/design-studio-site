@@ -4,7 +4,6 @@ import WorksList from './WorksList';
 
 export default function Home() {
     return(
-        <div>
             <section className="home__section">
                 <Container fluid="xl" className="intro__container">
                     <Row className="justify-content-center">
@@ -17,8 +16,7 @@ export default function Home() {
                         </Col>
                     </Row>
                 </Container>
+                <WorksList />
             </section>
-            <WorksList />
-        </div>
     )
 }
