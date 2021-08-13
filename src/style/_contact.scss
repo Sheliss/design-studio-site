@@ -1,0 +1,72 @@
+.contact__section {
+    background-color: $grayBG-color;
+}
+
+.contact__row {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.contact__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 500;
+    padding-bottom: 42px;
+}
+
+.contact__text {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 40px;
+
+    &.contact__text__line {
+        padding-bottom: 25px;
+
+        span {
+            font-weight: 700;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.contact__form__text {
+    border: 0;
+    border-radius: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem $main-color;
+    }
+}
+
+.contact__form__row {
+    padding-bottom: 30px;
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+}
+
+.contact__submitBtn {
+    border-radius: 0;
+    background-color: $main-color;
+    border-color: $main-color;
+    padding: 23px 35px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+
+    &:hover {
+        background-color: white;
+        border-color: $main-color;
+        color: $main-color;
+    }
+}

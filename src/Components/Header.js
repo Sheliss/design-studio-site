@@ -15,7 +15,7 @@ export default function Header() {
                     <Nav className="nav__custom">
                         <Nav.Link as={Link} to="/" className="nav__btn">Home</Nav.Link>
                         <Nav.Link as={Link} to="/about" className="nav__btn">About</Nav.Link>
-                        <Nav.Link as={Link} href="/" className="nav__btn">Contact</Nav.Link>
+                        <Nav.Link as={Link} to="/contact" className="nav__btn">Contact</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Photo from '../assets/photo.jpg';
 
 export default function About() {
@@ -87,7 +88,9 @@ export default function About() {
                                 Let us know what you're looking for in an agency. We'll take a look and see 
                                 if this could be the start of something beautiful.
                             </div>
-                            <button className="about__contact__button align-self-center">let’s talk</button>
+                            <Link to="/contact" className="align-self-center">
+                            <button className="about__contact__button">let’s talk</button>
+                            </Link>
                         </Col>
                     </Row>
                 </Container>
