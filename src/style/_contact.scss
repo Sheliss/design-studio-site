@@ -69,4 +69,16 @@
         border-color: $main-color;
         color: $main-color;
     }
+
+    &:focus {
+        background-color: white;
+        border-color: $main-color;
+        color: $main-color;
+        box-shadow: none;
+
+    }
+}
+
+.contact__map__container {
+    height: 300px;
 }

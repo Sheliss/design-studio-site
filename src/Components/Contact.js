@@ -1,8 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
+import { Map, Marker } from "pigeon-maps"
 
 export default function Contact() {
+    const markerColor = '#21bfb9';
+
     return (
+        <div>
         <section className="contact__section">
             <Container fluid="xl">
                 <Row className="contact__row">
@@ -57,5 +61,17 @@ export default function Contact() {
                 </Row>
             </Container>
         </section>
+        <section className="contact__map">
+            <Container fluid>
+                <Row>
+                    <Col className="g-0 contact__map__container">
+                        <Map height={300} defaultCenter={[29.608650, -95.229810]} defaultZoom={15}>
+                            <Marker width={30} color={markerColor} anchor={[29.608650, -95.229810]} />
+                        </Map>
+                    </Col>
+                </Row>
+            </Container>
+        </section>
+        </div>
     )
 }
