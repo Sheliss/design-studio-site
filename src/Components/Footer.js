@@ -13,7 +13,7 @@ export default function Footer() {
                         Designed by robirurk.
                         </div>
                     </Col>
-                    <Col className="col-2 offset-2">
+                    <Col className="col-2 offset-lg-2">
                         <div className="footer__contact">
                             hello@pirolltheme.com
                         </div>

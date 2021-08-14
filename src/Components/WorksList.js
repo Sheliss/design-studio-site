@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Container, Row, Col, Image, Spinner} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 
@@ -29,7 +30,7 @@ export default function WorksList() {
         
         return (
             
-        <Col key={index} className="g-0 worksGrid_container scale-in-center">
+        <Col as={Link} to={`work/${alt}`} key={index} className="g-0 worksGrid_container scale-in-center">
             <Image src={img} alt={alt} className="img-fluid worksGrid__image"></Image>
             <span class="pe-7s-look works__look"></span>
         </Col>

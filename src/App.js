@@ -5,6 +5,7 @@ import Home from './Components/Home';
 import Footer from './Components/Footer';
 import About from './Components/About';
 import Contact from './Components/Contact';
+import Work from './Components/Work';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" exact component={Home}/>
           <Route path="/about" component={About}/>
           <Route path="/contact" component={Contact}/>
+          <Route path="/work/:id" component={Work}/>
         </Switch>
         <Footer/>
       </Router>

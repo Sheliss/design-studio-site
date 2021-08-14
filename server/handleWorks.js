@@ -15,6 +15,20 @@ const getWorksList = (req, res) => {
     res.send(tempArray);
 }
 
+const getAllWorks = (req, res) => {
+    const works = worksList.getWorkList();
+
+    res.send(works);
+}
+
+const getSingleWork = (req, res) => {
+    const workId = req.query.id;
+    const works = worksList.getWorkList();
+    res.send(works[workId]);
+}
+
 module.exports = {
-    getWorksList
+    getWorksList,
+    getAllWorks,
+    getSingleWork
 }

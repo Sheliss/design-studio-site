@@ -1,0 +1,50 @@
+.work__section {
+    background-color: $grayBG-color;
+}
+
+.work__infoGroup {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.work__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 500;
+    padding-bottom: 42px;
+}
+
+.work__text {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 40px;
+    color: $text-gray;
+
+    &.work__text__line {
+        padding-bottom: 25px;
+
+        span {
+            color:black;
+            font-weight: 700;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.work__shareLink {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    padding-right: 5px;
+    color: $text-gray;
+
+    &:hover {
+        color: $main-color;
+    }
+}
