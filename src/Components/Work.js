@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Spinner, Image} from 'react-bootstrap';
-import { Route } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function Work({ match }) {
 
     const [workData, setWorkData] = useState({});
     const [showPopup, setPopup] = useState(false);
-    
+    let { id } = useParams();
 
     useEffect(() => {
         fetchWork()
             .then(res => setWorkData(res))
-    }, []);
+    }, [id]);
 
     const fetchWork = async () => {
         const fetchWork = await fetch(`/work/?id=${match.params.id}`);
@@ -36,7 +36,6 @@ export default function Work({ match }) {
         setPopup(!showPopup);
     }
 
-
     const currentWork = (data) => {
         const links = data.share;
         const image = __dirname + data.img;
@@ -50,7 +49,6 @@ export default function Work({ match }) {
                 </Row>
             </Container>
         ) : (
-            
             <Container fluid>
                 <Row>
                     <Col className="offset-1 col-4 work__infoGroup">
@@ -90,16 +88,55 @@ export default function Work({ match }) {
                         </Row>
                     </Container>
                 </div>}
-                {showPopup && <div className="work__popup__bg" onClick={(e) => {handlePopup(e)}}></div>}
+                {showPopup !== false && <div className="work__popup__bg" onClick={(e) => {handlePopup(e)}}></div>}
             </Container>
+        )
+    }
 
+    const workNav = (data) => {
+        return (
+            <Container fluid="xl">
+                    <Row className="work__nav__row">
+                        {data.prev === false ? 
+                            <Col className="col-2">
+                            </Col>
+                            :
+                            <Col as={Link} to={`/work/${data.prev}`} className="col-2 work__nav__link">
+                                <span className="pe-7s-angle-left work_nav_icon"></span>
+                                <span className="work__nav__text">previous project</span>
+                            </Col>}
+                            <Col className="col-2 offset-3 d-flex justify-content-center">
+                                <div className="work__squares__container align-self-center">
+                                    <div className="work__square"></div>
+                                    <div className="work__square"></div>
+                                    <div className="work__square"></div>
+                                    <div className="work__square"></div>
+                                </div>
+                            </Col>
+                            {data.next === false ? 
+                            <Col className="col-2 offset-3">
+                            </Col>
+                            :
+                            <Col as={Link} to={`/work/${data.next}`} className="col-2 offset-3 work__nav__link">
+                                <div className="work__nav__text">next project</div>
+                                <div>
+                                <span className="pe-7s-angle-right work_nav_icon"></span>
+                                </div>
+                            </Col>}
+                        </Row>
+                 </Container>
         )
     }
 
 
     return(
-        <section className="work__section">
-            {currentWork(workData)}
-        </section>
+        <div>
+            <section className="work__section">
+                {currentWork(workData)}
+            </section>
+            <section className="work__nav__section">
+                {workNav(workData)}
+            </section>
+        </div>
     )
 }
