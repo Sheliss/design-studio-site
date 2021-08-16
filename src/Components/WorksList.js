@@ -3,7 +3,6 @@ import {Container, Row, Col, Image, Spinner} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
-
 export default function WorksList() {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
