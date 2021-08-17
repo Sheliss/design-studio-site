@@ -53,7 +53,7 @@ export default function Contact() {
                             </Row>
                             <Row className="contact__form__row">
                                 <Col>
-                                    <button type="submit" class="btn btn-primary contact__submitBtn">Send Message</button>
+                                    <button type="submit" className="btn btn-primary contact__submitBtn">Send Message</button>
                                 </Col>
                             </Row>
                         </Form>

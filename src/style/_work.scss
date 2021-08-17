@@ -160,7 +160,7 @@
 .work_nav_icon {
     font-size: 24px;
     line-height: 24px;
-    transform: translateY(1px);
+    transform: translateY(2px);
 }
 
 .work__nav__text {
@@ -169,7 +169,6 @@
     line-height: 12px;
     font-weight: 500;
     text-transform: uppercase;
-    transform: translateY(7px);
 }
 
 .work__nav__link {
@@ -177,6 +176,7 @@
     display: flex;
     align-content: center;
     color: black;
+    transition: color .1s;
 
 
     &:hover {
