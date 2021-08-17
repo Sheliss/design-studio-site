@@ -12,7 +12,7 @@ export default function WorksList() {
     }, [])
 
     const callWorksList = async () => {
-        const response = await fetch('/works-list');
+        const response = await fetch('https://designer-studio-server.herokuapp.com/works-list');
 
         const body = await response.json();
         
@@ -20,12 +20,12 @@ export default function WorksList() {
     }
 
     const workCard = (card, index) => {
-        const img = card.img;
+        const img = 'https://designer-studio-server.herokuapp.com/' + card.img;
         const alt = card.id;
         
         return (
             
-        <Col as={Link} to={`work/${alt}`} key={index} className="g-0 worksGrid_container fade-in">
+        <Col as={Link} to={`/design-studio-site/work/${alt}`} key={index} className="g-0 worksGrid_container fade-in">
             <Image src={img} alt={alt} className="img-fluid worksGrid__image"></Image>
             <span className="pe-7s-look works__look"></span>
         </Col>

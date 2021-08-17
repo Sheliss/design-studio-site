@@ -88,7 +88,7 @@ export default function About() {
                                 Let us know what you're looking for in an agency. We'll take a look and see 
                                 if this could be the start of something beautiful.
                             </div>
-                            <Link to="/contact" className="align-self-center">
+                            <Link to="/design-studio-site/contact" className="align-self-center">
                             <button className="about__contact__button">let’s talk</button>
                             </Link>
                         </Col>

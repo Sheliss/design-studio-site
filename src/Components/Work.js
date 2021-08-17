@@ -10,7 +10,7 @@ export default function Work() {
 
     useEffect(() => {
         const fetchWork = async () => {
-            const fetchWork = await fetch(`/work/?id=${ id }`);
+            const fetchWork = await fetch(`https://designer-studio-server.herokuapp.com/work/?id=${ id }`);
             
             const work = await fetchWork.json();
             
@@ -39,7 +39,7 @@ export default function Work() {
 
     const currentWork = (data) => {
         const links = data.share;
-        const image = __dirname + data.img;
+        const image = 'https://designer-studio-server.herokuapp.com/' + data.img;
 
         return Object.keys(data).length === 0 && data.constructor === Object ? (
             <Container>
@@ -102,7 +102,7 @@ export default function Work() {
                             <Col className="col-2">
                             </Col>
                             :
-                            <Col as={Link} to={`/work/${data.prev}`} className="col-2 work__nav__link">
+                            <Col as={Link} to={`/design-studio-site/work/${data.prev}`} className="col-2 work__nav__link">
                                 <div className="work__nav__link__innerWrapper">
                                     <span className="pe-7s-angle-left work_nav_icon"></span>
                                 </div>
@@ -122,7 +122,7 @@ export default function Work() {
                             <Col className="col-2 offset-3">
                             </Col>
                             :
-                            <Col as={Link} to={`/work/${data.next}`} className="col-2 offset-3 work__nav__link justify-content-end">
+                            <Col as={Link} to={`/design-studio-site/work/${data.next}`} className="col-2 offset-3 work__nav__link justify-content-end">
                                 <div className="work__nav__link__innerWrapper d-none d-lg-block">
                                     <span className="work__nav__text">next project</span>
                                 </div>

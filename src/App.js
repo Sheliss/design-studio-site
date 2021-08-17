@@ -14,10 +14,10 @@ function App() {
       <Router>
         <Header/>
         <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/about" component={About}/>
-          <Route path="/contact" component={Contact}/>
-          <Route path="/work/:id" component={Work}/>
+          <Route path="/design-studio-site" exact component={Home}/>
+          <Route path="/design-studio-site/about" component={About}/>
+          <Route path="/design-studio-site/contact" component={Contact}/>
+          <Route path="/design-studio-site/work/:id" component={Work}/>
         </Switch>
         <Footer/>
       </Router>

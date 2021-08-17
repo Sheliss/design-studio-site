@@ -2,4 +2,4 @@
 
 React + Express for dynamic works list
 
-### `npm run dev`
+:white_check_mark: Working version [here!](https://sheliss.github.io/design-studio-site/)
