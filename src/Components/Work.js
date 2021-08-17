@@ -52,7 +52,7 @@ export default function Work() {
         ) : (
             <Container fluid>
                 <Row>
-                    <Col className="offset-1 col-4 work__infoGroup">
+                    <Col className="offset-1 col-10 col-md-4 work__infoGroup">
                         <div className="work__title">
                             {data.name}
                         </div>
@@ -74,7 +74,7 @@ export default function Work() {
                             }
                         </div>
                     </Col>
-                    <Col className="offset-1 work__image__container g-0" onClick={(e) => {handlePopup(e)}}>
+                    <Col className="col-12 offset-md-1 col-md-6 work__image__container g-0" onClick={(e) => {handlePopup(e)}}>
                         <Image src={image} alt={data.title} className="work__image img-fluid"></Image>
                         <span className="pe-7s-search work__image__look"></span>
                     </Col>
@@ -82,7 +82,7 @@ export default function Work() {
                 {showPopup && <div className="work__popup__container">
                     <Container fluid className="g-0">
                         <Row className=" g-0 justify-content-center">
-                            <Col className="work__popup__image align-self-center col-8">
+                            <Col className="work__popup__image align-self-center col-10 col-lg-8">
                                 <Image src={image} alt={`popup ${data.title}`} className="img-fluid"></Image>
                                 <span className="pe-7s-close work__popup__close" onClick={(e) => {handlePopup(e)}}></span>
                             </Col>
@@ -106,7 +106,7 @@ export default function Work() {
                                 <div className="work__nav__link__innerWrapper">
                                     <span className="pe-7s-angle-left work_nav_icon"></span>
                                 </div>
-                                <div className="work__nav__link__innerWrapper">
+                                <div className="work__nav__link__innerWrapper d-none d-lg-block">
                                     <span className="work__nav__text">previous project</span>
                                 </div>
                             </Col>}
@@ -122,8 +122,8 @@ export default function Work() {
                             <Col className="col-2 offset-3">
                             </Col>
                             :
-                            <Col as={Link} to={`/work/${data.next}`} className="col-2 offset-3 work__nav__link">
-                                <div className="work__nav__link__innerWrapper">
+                            <Col as={Link} to={`/work/${data.next}`} className="col-2 offset-3 work__nav__link justify-content-end">
+                                <div className="work__nav__link__innerWrapper d-none d-lg-block">
                                     <span className="work__nav__text">next project</span>
                                 </div>
                                 <div className="work__nav__link__innerWrapper">
@@ -137,7 +137,7 @@ export default function Work() {
 
 
     return(
-        <div>
+        <div className="fade-in">
             <section className="work__section">
                 {currentWork(workData)}
             </section>

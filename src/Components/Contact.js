@@ -6,11 +6,11 @@ export default function Contact() {
     const markerColor = '#21bfb9';
 
     return (
-        <div>
+        <div className="page fade-in">
         <section className="contact__section">
             <Container fluid="xl">
                 <Row className="contact__row">
-                    <Col className="col-4">
+                    <Col className="col-12 col-md-5 col-lg-4">
                         <div className="contact__title">Contact Info:</div>
                         <div className="contact__text">
                             To give give beginning divide, cattle. Give moving 
@@ -31,7 +31,7 @@ export default function Contact() {
                             <span>Fax: </span>+44 987 065 909
                         </div>
                     </Col>
-                    <Col className="col-7 offset-1">
+                    <Col className="col-12 col-md-6 col-lg-7 offset-md-1">
                         <Form>
                             <Row className="contact__form__row">
                                 <Col>
