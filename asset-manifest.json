@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/design-studio-site/static/css/main.f79a6549.chunk.css",
-    "main.js": "/design-studio-site/static/js/main.dd3f52eb.chunk.js",
-    "main.js.map": "/design-studio-site/static/js/main.dd3f52eb.chunk.js.map",
+    "main.js": "/design-studio-site/static/js/main.91b91e47.chunk.js",
+    "main.js.map": "/design-studio-site/static/js/main.91b91e47.chunk.js.map",
     "runtime-main.js": "/design-studio-site/static/js/runtime-main.6ecc52ce.js",
     "runtime-main.js.map": "/design-studio-site/static/js/runtime-main.6ecc52ce.js.map",
     "static/css/2.818011ed.chunk.css": "/design-studio-site/static/css/2.818011ed.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.818011ed.chunk.css",
     "static/js/2.bedcd7ab.chunk.js",
     "static/css/main.f79a6549.chunk.css",
-    "static/js/main.dd3f52eb.chunk.js"
+    "static/js/main.91b91e47.chunk.js"
   ]
 }
