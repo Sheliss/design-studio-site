@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Spinner, Image} from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { work_page_request, work_page_success} from '../Store/actions/workPage';
 
 export default function Work() {
-
-    const [workData, setWorkData] = useState({});
+    const dispatch = useDispatch();
     const [showPopup, setPopup] = useState(false);
     const { id } = useParams();
 
     useEffect(() => {
+        dispatch(work_page_request());
         const fetchWork = async () => {
             const fetchWork = await fetch(`https://designer-studio-server.herokuapp.com/work/?id=${ id }`);
             
@@ -18,8 +20,8 @@ export default function Work() {
         }
 
         fetchWork()
-            .then(res => setWorkData(res))
-    }, [id])
+            .then(res => dispatch(work_page_success(res)))
+    }, [id, dispatch])
 
 
     const shareLink = (info, index) => {
@@ -32,8 +34,7 @@ export default function Work() {
     }
 
 
-    const handlePopup = (e) => {
-        e.stopPropagation();
+    const handlePopup = () => {
         setPopup(!showPopup);
     }
 
@@ -41,15 +42,7 @@ export default function Work() {
         const links = data.share;
         const image = 'https://designer-studio-server.herokuapp.com/' + data.img;
 
-        return Object.keys(data).length === 0 && data.constructor === Object ? (
-            <Container>
-                <Row>
-                    <Col className="d-flex justify-content-center">  
-                        <Spinner animation="border works__spinner"></Spinner>
-                    </Col>
-                </Row>
-            </Container>
-        ) : (
+        return (
             <Container fluid>
                 <Row>
                     <Col className="offset-1 col-10 col-md-4 work__infoGroup">
@@ -74,7 +67,7 @@ export default function Work() {
                             }
                         </div>
                     </Col>
-                    <Col className="col-12 offset-md-1 col-md-6 work__image__container g-0" onClick={(e) => {handlePopup(e)}}>
+                    <Col className="col-12 offset-md-1 col-md-6 work__image__container g-0" onClick={() => {handlePopup()}}>
                         <Image src={image} alt={data.title} className="work__image img-fluid"></Image>
                         <span className="pe-7s-search work__image__look"></span>
                     </Col>
@@ -84,12 +77,24 @@ export default function Work() {
                         <Row className=" g-0 justify-content-center">
                             <Col className="work__popup__image align-self-center col-10 col-lg-8">
                                 <Image src={image} alt={`popup ${data.title}`} className="img-fluid"></Image>
-                                <span className="pe-7s-close work__popup__close" onClick={(e) => {handlePopup(e)}}></span>
+                                <span className="pe-7s-close work__popup__close" onClick={() => {handlePopup()}}></span>
                             </Col>
                         </Row>
                     </Container>
                 </div>}
-                {showPopup !== false && <div className="work__popup__bg" onClick={(e) => {handlePopup(e)}}></div>}
+                {showPopup !== false && <div className="work__popup__bg" onClick={() => {handlePopup()}}></div>}
+            </Container>
+        )
+    }
+
+    const workPageLoading = () => {
+        return(
+            <Container>
+                <Row>
+                    <Col className="d-flex justify-content-center">  
+                        <Spinner animation="border works__spinner"></Spinner>
+                    </Col>
+                </Row>
             </Container>
         )
     }
@@ -135,15 +140,29 @@ export default function Work() {
         )
     }
 
+    const workPageGroup = (data) => {
+        return(
+            <div className="fade-in">
+                <section className="work__section">
+                    {currentWork(data)}
+                </section>
+                <section className="work__nav__section">
+                    {workNav(data)}
+                </section>
+            </div>
+        )
+    }
+
+    const data = useSelector(state => state.workPage.data);
+    const loading = useSelector(state => state.workPage.loading);
 
     return(
-        <div className="fade-in">
-            <section className="work__section">
-                {currentWork(workData)}
-            </section>
-            <section className="work__nav__section">
-                {workNav(workData)}
-            </section>
-        </div>
+        <Container fluid>
+        {loading ? (
+            workPageLoading()
+        ) : (
+            workPageGroup(data)
+        )}
+        </Container>
     )
 }
