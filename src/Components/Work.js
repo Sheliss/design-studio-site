@@ -38,6 +38,11 @@ export default function Work() {
         setPopup(!showPopup);
     }
 
+    const stopPropagation = (e) => {
+        e.stopPropagation();
+        return
+    }
+
     const currentWork = (data) => {
         const links = data.share;
         const image = 'https://designer-studio-server.herokuapp.com/' + data.img;
@@ -72,10 +77,10 @@ export default function Work() {
                         <span className="pe-7s-search work__image__look"></span>
                     </Col>
                 </Row>
-                {showPopup && <div className="work__popup__container">
+                {showPopup && <div className="work__popup__container" onClick={() => {handlePopup()}}>
                     <Container fluid className="g-0">
                         <Row className=" g-0 justify-content-center">
-                            <Col className="work__popup__image align-self-center col-10 col-lg-8">
+                            <Col className="work__popup__image align-self-center col-10 col-lg-8" onClick={(e) => {stopPropagation(e)}}>
                                 <Image src={image} alt={`popup ${data.title}`} className="img-fluid"></Image>
                                 <span className="pe-7s-close work__popup__close" onClick={() => {handlePopup()}}></span>
                             </Col>

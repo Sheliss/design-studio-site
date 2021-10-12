@@ -56,7 +56,7 @@ export default function WorksList() {
 
     return(
         <Container fluid>
-            {loading ? (
+            {loading ? (    
                 worksLoading()
             ) : (
                 retrivedWorks(data)
