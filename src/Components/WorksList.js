@@ -15,7 +15,7 @@ export default function WorksList() {
     }, [dispatch])
 
     const callWorksList = async () => {
-        const response = await fetch('https://designer-studio-server.herokuapp.com/works-list');
+        const response = await fetch('https://designer-studio-server.herokuapp.com/list');
 
         const body = await response.json();
         
@@ -34,7 +34,7 @@ export default function WorksList() {
         )
     }
 
-    const retrivedWorks = (data) => {
+    const retrievedWorks = (data) => {
         return (
         <Row className="row-cols-lg-4 row-cols-md-3 row-cols-2">
             {Object.keys(data).map((key, index) => (
@@ -59,7 +59,7 @@ export default function WorksList() {
             {loading ? (    
                 worksLoading()
             ) : (
-                retrivedWorks(data)
+                retrievedWorks(data)
             )}
         </Container>
     ) 

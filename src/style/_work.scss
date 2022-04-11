@@ -5,6 +5,7 @@
 .work__infoGroup {
     padding-top: 100px;
     padding-bottom: 100px;
+    text-align: left;
 }
 
 .work__title {
@@ -107,7 +108,6 @@
 }
 
 .work__popup__image {
-    position: relative;
     background-color: rgba(255, 255, 255, .75);
     padding: 1px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
@@ -124,15 +124,14 @@
 }
 
 .work__popup__close {
-    position: absolute;
-    top: 5px;
-    right: 5px;
+    position: fixed;
     font-size: 40px;
     color: rgba(255, 255, 255, .75);
     font-weight: 700;
     cursor: pointer;
     border-radius: 50%;
     transition: color .2s;
+    transform: translateX(-38px);
 
     &:hover {
         color: $main-color;
@@ -178,9 +177,35 @@
     align-content: center;
     color: black;
     transition: color .1s;
-
+    border: 0;
+    background: none;
+    cursor: pointer;
 
     &:hover {
         color: $main-color;
+    }
+}
+
+.work__card {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .work__card {
+        flex-direction: column;
+    }
+
+}
+
+
+//I have no idea why this arrow does not want to move, only absolute works
+@media (max-width: 992px) {
+    .right__arrow__anchor {
+        position: relative;
+    }
+
+    .right__arrow_fix {
+        position: absolute;
+        right: 18px;
     }
 }
