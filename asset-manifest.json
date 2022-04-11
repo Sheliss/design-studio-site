@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/design-studio-site/static/css/main.75aa19da.chunk.css",
-    "main.js": "/design-studio-site/static/js/main.e870bfe1.chunk.js",
-    "main.js.map": "/design-studio-site/static/js/main.e870bfe1.chunk.js.map",
+    "main.css": "/design-studio-site/static/css/main.096052a0.chunk.css",
+    "main.js": "/design-studio-site/static/js/main.be445092.chunk.js",
+    "main.js.map": "/design-studio-site/static/js/main.be445092.chunk.js.map",
     "runtime-main.js": "/design-studio-site/static/js/runtime-main.8c7f7a96.js",
     "runtime-main.js.map": "/design-studio-site/static/js/runtime-main.8c7f7a96.js.map",
-    "static/css/2.818011ed.chunk.css": "/design-studio-site/static/css/2.818011ed.chunk.css",
-    "static/js/2.7f5eac78.chunk.js": "/design-studio-site/static/js/2.7f5eac78.chunk.js",
-    "static/js/2.7f5eac78.chunk.js.map": "/design-studio-site/static/js/2.7f5eac78.chunk.js.map",
+    "static/css/2.1787eec0.chunk.css": "/design-studio-site/static/css/2.1787eec0.chunk.css",
+    "static/js/2.1af049ac.chunk.js": "/design-studio-site/static/js/2.1af049ac.chunk.js",
+    "static/js/2.1af049ac.chunk.js.map": "/design-studio-site/static/js/2.1af049ac.chunk.js.map",
     "index.html": "/design-studio-site/index.html",
-    "static/css/2.818011ed.chunk.css.map": "/design-studio-site/static/css/2.818011ed.chunk.css.map",
-    "static/css/main.75aa19da.chunk.css.map": "/design-studio-site/static/css/main.75aa19da.chunk.css.map",
-    "static/js/2.7f5eac78.chunk.js.LICENSE.txt": "/design-studio-site/static/js/2.7f5eac78.chunk.js.LICENSE.txt",
+    "static/css/2.1787eec0.chunk.css.map": "/design-studio-site/static/css/2.1787eec0.chunk.css.map",
+    "static/css/main.096052a0.chunk.css.map": "/design-studio-site/static/css/main.096052a0.chunk.css.map",
+    "static/js/2.1af049ac.chunk.js.LICENSE.txt": "/design-studio-site/static/js/2.1af049ac.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/design-studio-site/static/media/Pe-icon-7-stroke.7233a7ae.ttf",
-    "static/media/photo.6348a0ad.jpg": "/design-studio-site/static/media/photo.6348a0ad.jpg"
+    "static/media/photo.6348a0ad.jpg": "/design-studio-site/static/media/photo.6348a0ad.jpg",
+    "static/media/slick-theme.css": "/design-studio-site/static/media/slick.c94f7671.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.8c7f7a96.js",
-    "static/css/2.818011ed.chunk.css",
-    "static/js/2.7f5eac78.chunk.js",
-    "static/css/main.75aa19da.chunk.css",
-    "static/js/main.e870bfe1.chunk.js"
+    "static/css/2.1787eec0.chunk.css",
+    "static/js/2.1af049ac.chunk.js",
+    "static/css/main.096052a0.chunk.css",
+    "static/js/main.be445092.chunk.js"
   ]
 }
